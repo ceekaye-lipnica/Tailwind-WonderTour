@@ -1,0 +1,379 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+	@apply max-w-[80rem] mx-auto p-[1.5rem];
+}
+
+/* REPEATABLE PATTERNS  */
+.btn{
+    @apply inline-block py-[1rem] px-[2rem];
+}
+
+.btn.transGreen{
+    @apply border-solid border-[2px] border-primary  hover:text-light hover:bg-mint hover:border-mint; 
+}
+
+
+
+@layer components{
+
+    .header{
+        @apply relative;
+    }
+
+    .desktop-view{
+        @apply hidden;
+    }
+
+     /*  MOBILE VIEW - NAVIGATION */
+    .mobile-view{
+        @apply flex justify-between p-[1.5rem] bg-light shadow-md;
+    }
+
+    .mobile-left{
+        @apply flex gap-[2rem];
+    }
+
+
+    /* MOBILE CONTACT */
+    .mobile-contact{
+        @apply flex flex-col gap-[1rem] items-center absolute bg-grey right-0 top-[-100rem];
+    }
+
+    .mobile-contact.open{
+        @apply top-[4.2rem] p-[1rem] w-[15rem]
+    }
+
+    .mobile-contact-text {
+        @apply flex flex-col gap-[.6rem];
+    }
+
+    .mobile-contact-text p{
+        @apply text-dark flex flex-row gap-[1rem];
+    }
+
+    .mobile-contact-text p i{
+        @apply text-primary text-[1.2rem]
+    }
+
+
+    /* NAVIGATION BAR */
+    .mobile-nav{
+        @apply absolute bg-light left-[-100rem] top-[4.3rem] transition-[.8s] ease-in delay-[.2s] min-h-[100vh];
+    }
+
+    .mobile-nav.open{
+        @apply left-0 transition-all delay-[.3s]; 
+    }
+
+
+    /* MOBILE-NAV-SOCIALS */
+    .mobile-nav-socials {
+        @apply border-solid border-b border-gray-200;
+    }
+
+    .mobile-nav-socials ul{
+        @apply flex justify-center items-center gap-[1rem] pt-[1.5rem] pb-[2rem];
+    }
+
+    .mobile-nav-socials ul li a{
+        @apply text-[1.1rem] hover:text-primary transition ease-in-out duration-[.5s];
+    }
+
+
+    /* DROPDOWN MENU */
+    .mobile-nav-drop{
+        @apply bg-light w-[16rem] px-[.1rem];
+    }
+
+    .drop-item h4{
+		@apply flex justify-between items-center text-gray-500 text-[1rem] py-[1rem] cursor-pointer px-[1rem] hover:bg-primary hover:text-light;
+	}
+
+    .drop-item:first-child h4{
+		@apply bg-primary text-light;
+	}
+
+	.drop-item h4 i{
+		@apply text-[.8rem] text-gray-500 hover:text-light;
+	}
+
+	.drop-item h4 i.open{
+		@apply rotate-[180deg] transition ease-in-out duration-[.5s];
+	}
+
+	.drpDown{
+		@apply  max-h-0 overflow-hidden transition ease-in-out duration-[.5s];
+	}
+
+	.drpDown.open{
+		@apply max-h-[80rem] transition ease-in-out duration-[.5s];
+	}
+
+	.drop-content{
+		@apply  max-h-0 overflow-hidden transition ease-in-out duration-[.5s] ;
+	}
+
+	.drop-content.open{
+		@apply max-h-[50rem] transition ease-in-out duration-[.5s] overflow-y-scroll;
+	}
+
+    .drop-item ul li{
+		@apply py-[1rem] px-[2rem] cursor-pointer hover:bg-primary  
+	}
+
+    .drop-item ul li a{
+		@apply text-[.9rem] text-gray-500 hover:text-light;
+	}
+
+    .content-1 h3{
+        @apply text-mint mx-[1.2rem] py-[.5rem] text-[1.3rem] border-solid border-b border-gray-300
+    }
+
+
+     /* TOGGLE MENU */
+    .toggle__menu{
+        @apply cursor-pointer;
+    }
+
+	.toggle__menu span {
+		@apply w-[1.5rem] h-[.2rem] bg-dark block transition ease-in-out duration-[.5s];
+	}
+
+	.toggle__menu span:nth-child(2){
+		@apply my-[.3rem];
+	}
+
+	.toggle__menu.open span:first-child {
+		@apply translate-x-[0] translate-y-[13px] rotate-[230deg] transition ease-in-out duration-[.5s] w-[.8rem];
+	}
+
+	.toggle__menu.open span:nth-child(2) {
+		@apply transition ease-in-out duration-[.5s];
+	}
+	.toggle__menu.open span:last-child {
+		@apply translate-x-0 translate-y-[-14px] rotate-[-230deg] transition ease-in-out duration-[.5s] w-[.8rem];
+	}
+
+
+    /* CIRCLE TOGGLE MENU */
+
+    .circle-toggle__menu{
+        @apply h-[1rem] cursor-pointer;
+    }
+
+    .circle-toggle__menu span {
+		@apply w-[.4rem] h-[.4rem] bg-dark block transition ease-in-out duration-[.5s] rounded-full;
+	}
+
+	.circle-toggle__menu span:nth-child(2){
+		@apply my-[.2rem];
+	}
+
+	.circle-toggle__menu.open span:first-child {
+		@apply translate-x-0 translate-y-[1rem] rotate-[225deg] transition ease-in-out duration-[.5s] w-[.3rem] h-[.3rem];
+	}
+
+	.circle-toggle__menu.open span:nth-child(2) {
+		@apply transition ease-in-out duration-[.5s] w-[.3rem] h-[.3rem];
+	}
+	.circle-toggle__menu.open span:last-child {
+		@apply translate-x-0 translate-y-[-1rem] rotate-[-225deg] transition ease-in-out duration-[.5s] w-[.3rem] h-[.3rem];
+	}
+
+
+
+    @media (min-width:1080px){
+
+        .header .container{
+            @apply py-0;
+        }
+
+        .mobile-view{
+            @apply hidden;
+        }
+
+        .desktop-view{
+            @apply block ;
+        }
+
+        /* HEADER TOP */
+        .header-top{
+            @apply flex justify-between items-center bg-light max-w-[80rem] mx-auto p-[1.5rem];
+        }
+
+        .contact{
+            @apply flex items-center gap-[2rem];
+        }
+
+        .contact-text{
+            @apply flex items-center gap-[1rem]
+        }
+
+        .contact-text p{
+            @apply text-dark flex items-center gap-[1rem] text-[.95rem];
+        }
+    
+        .contact-text p:first-child{
+            @apply pr-[1rem] border-solid border-r border-gray-400
+        }
+    
+        .contact-text p i{
+            @apply text-primary text-[1.2rem]
+        }
+
+
+        /* HEADER BOT */
+        .bot-wrapper{
+            @apply bg-asul;
+        }
+
+        .header-bot{
+            @apply flex justify-between items-center max-w-[80rem] mx-auto ;
+        }
+
+        .header-bot ul{
+            @apply  flex items-center gap-[1rem];
+        }
+
+
+        /* BOT-NAV-CONTENT-1 */
+        .header-bot .bot-nav .bot-nav-content-1{
+            @apply bg-hoverBlue border-solid border-t-[3px] border-primary py-[1.5rem] px-[1.3rem];
+        }
+
+        .header-bot .bot-nav .bot-nav-content-1 a{
+            @apply text-light font-medium text-[1.1rem];
+        }
+
+         /* BOT-NAV-CONTENT-2 */
+        .header-bot .bot-nav .bot-nav-content-2{
+            @apply py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
+        }
+
+        .header-bot .bot-nav .bot-nav-content-2 a{
+            @apply text-light font-medium text-[1.1rem];
+        }
+
+         /* BOT-NAV-CONTENT-3 */
+        .header-bot .bot-nav .bot-nav-content-3{
+            @apply py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
+        }
+
+        .header-bot .bot-nav .bot-nav-content-3 a{
+            @apply text-light font-medium text-[1.1rem];
+        }
+         /* BOT-NAV-CONTENT-4 */
+        .header-bot .bot-nav .bot-nav-content-4{
+            @apply py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
+        }
+
+        .header-bot .bot-nav .bot-nav-content-4 a{
+            @apply text-light font-medium text-[1.1rem];
+        }
+
+         /* BOT-NAV-CONTENT-5 */
+        .header-bot .bot-nav .bot-nav-content-5{
+            @apply py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
+        }
+
+        .header-bot .bot-nav .bot-nav-content-5 a{
+            @apply text-light font-medium text-[1.1rem];
+        }
+
+         /* BOT-NAV-CONTENT-6 */
+        .header-bot .bot-nav .bot-nav-content-6{
+            @apply py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
+        }
+
+        .header-bot .bot-nav .bot-nav-content-6 a{
+            @apply text-light font-medium text-[1.1rem];
+        }
+
+         /* BOT-NAV-CONTENT-7 */
+        .header-bot .bot-nav .bot-nav-content-7{
+            @apply py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
+        }
+
+        .header-bot .bot-nav .bot-nav-content-7 a{
+            @apply text-light font-medium text-[1.1rem];
+        }
+
+
+        /* HEADER SOCIALS */
+        .header-socials ul li a{
+            @apply text-[1.1rem] text-light hover:text-primary transition ease-in-out duration-[.5s];
+        }
+        
+
+        /* NAV DROPDOWN */
+        .bot-drop-2{
+            @apply absolute bg-yellow-400 top-[11.55rem] w-[15rem] p-[1rem] left-[26.6rem];
+        }
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

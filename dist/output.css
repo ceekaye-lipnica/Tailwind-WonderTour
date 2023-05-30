@@ -1,0 +1,1245 @@
+/*
+! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
+*/
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+*/
+
+html {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4;
+  /* 3 */
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  font-weight: inherit;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
+}
+
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+.header {
+  position: relative;
+}
+
+.desktop-view {
+  display: none;
+}
+
+/*  MOBILE VIEW - NAVIGATION */
+
+.mobile-view {
+  display: flex;
+  justify-content: space-between;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding: 1.5rem;
+  --tw-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);;
+  --tw-shadow-colored: 0 0 10px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.mobile-left {
+  display: flex;
+  gap: 2rem;
+}
+
+/* MOBILE CONTACT */
+
+.mobile-contact {
+  position: absolute;
+  right: 0px;
+  top: -100rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(247 247 247 / var(--tw-bg-opacity));
+}
+
+.mobile-contact.open {
+  top: 4.2rem;
+  width: 15rem;
+  padding: 1rem;
+}
+
+.mobile-contact-text {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.mobile-contact-text p {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(21 21 21 / var(--tw-text-opacity));
+}
+
+.mobile-contact-text p i {
+  font-size: 1.2rem;
+  --tw-text-opacity: 1;
+  color: rgb(1 179 167 / var(--tw-text-opacity));
+}
+
+/* NAVIGATION BAR */
+
+.mobile-nav {
+  position: absolute;
+  left: -100rem;
+  top: 4.3rem;
+  min-height: 100vh;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  transition-property: .8s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-delay: .2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.mobile-nav.open {
+  left: 0px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-delay: .3s;
+}
+
+/* MOBILE-NAV-SOCIALS */
+
+.mobile-nav-socials {
+  border-bottom-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+.mobile-nav-socials ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.mobile-nav-socials ul li a {
+  font-size: 1.1rem;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav-socials ul li a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(1 179 167 / var(--tw-text-opacity));
+}
+
+/* DROPDOWN MENU */
+
+.mobile-nav-drop {
+  width: 16rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-left: .1rem;
+  padding-right: .1rem;
+}
+
+.drop-item h4 {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.drop-item h4:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(1 179 167 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.drop-item:first-child h4 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(1 179 167 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.drop-item h4 i {
+  font-size: .8rem;
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.drop-item h4 i:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.drop-item h4 i.open {
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.drpDown {
+  max-height: 0px;
+  overflow: hidden;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.drpDown.open {
+  max-height: 80rem;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.drop-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.drop-content.open {
+  max-height: 50rem;
+  overflow-y: scroll;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.drop-item ul li {
+  cursor: pointer;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.drop-item ul li:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(1 179 167 / var(--tw-bg-opacity));
+}
+
+.drop-item ul li a {
+  font-size: .9rem;
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.drop-item ul li a:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.content-1 h3 {
+  margin-left: 1.2rem;
+  margin-right: 1.2rem;
+  border-bottom-width: 1px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  font-size: 1.3rem;
+  --tw-text-opacity: 1;
+  color: rgb(80 186 135 / var(--tw-text-opacity));
+}
+
+/* TOGGLE MENU */
+
+.toggle__menu {
+  cursor: pointer;
+}
+
+.toggle__menu span {
+  display: block;
+  height: .2rem;
+  width: 1.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(21 21 21 / var(--tw-bg-opacity));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle__menu span:nth-child(2) {
+  margin-top: .3rem;
+  margin-bottom: .3rem;
+}
+
+.toggle__menu.open span:first-child {
+  width: .8rem;
+  --tw-translate-x: 0;
+  --tw-translate-y: 13px;
+  --tw-rotate: 230deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle__menu.open span:nth-child(2) {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toggle__menu.open span:last-child {
+  width: .8rem;
+  --tw-translate-x: 0px;
+  --tw-translate-y: -14px;
+  --tw-rotate: -230deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* CIRCLE TOGGLE MENU */
+
+.circle-toggle__menu {
+  height: 1rem;
+  cursor: pointer;
+}
+
+.circle-toggle__menu span {
+  display: block;
+  height: .4rem;
+  width: .4rem;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(21 21 21 / var(--tw-bg-opacity));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.circle-toggle__menu span:nth-child(2) {
+  margin-top: .2rem;
+  margin-bottom: .2rem;
+}
+
+.circle-toggle__menu.open span:first-child {
+  height: .3rem;
+  width: .3rem;
+  --tw-translate-x: 0px;
+  --tw-translate-y: 1rem;
+  --tw-rotate: 225deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.circle-toggle__menu.open span:nth-child(2) {
+  height: .3rem;
+  width: .3rem;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.circle-toggle__menu.open span:last-child {
+  height: .3rem;
+  width: .3rem;
+  --tw-translate-x: 0px;
+  --tw-translate-y: -1rem;
+  --tw-rotate: -225deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 150ms;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width:1080px){
+  .header .container {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .mobile-view {
+    display: none;
+  }
+
+  .desktop-view {
+    display: block;
+  }
+
+  /* HEADER TOP */
+
+  .header-top {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    max-width: 80rem;
+    align-items: center;
+    justify-content: space-between;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding: 1.5rem;
+  }
+
+  .contact {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .contact-text {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .contact-text p {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: .95rem;
+    --tw-text-opacity: 1;
+    color: rgb(21 21 21 / var(--tw-text-opacity));
+  }
+
+  .contact-text p:first-child {
+    border-right-width: 1px;
+    border-style: solid;
+    --tw-border-opacity: 1;
+    border-color: rgb(156 163 175 / var(--tw-border-opacity));
+    padding-right: 1rem;
+  }
+
+  .contact-text p i {
+    font-size: 1.2rem;
+    --tw-text-opacity: 1;
+    color: rgb(1 179 167 / var(--tw-text-opacity));
+  }
+
+  /* HEADER BOT */
+
+  .bot-wrapper {
+    --tw-bg-opacity: 1;
+    background-color: rgb(22 46 68 / var(--tw-bg-opacity));
+  }
+
+  .header-bot {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    max-width: 80rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-bot ul {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* BOT-NAV-CONTENT-1 */
+
+  .header-bot .bot-nav .bot-nav-content-1 {
+    border-top-width: 3px;
+    border-style: solid;
+    --tw-border-opacity: 1;
+    border-color: rgb(1 179 167 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(48 69 89 / var(--tw-bg-opacity));
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+
+  .header-bot .bot-nav .bot-nav-content-1 a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  /* BOT-NAV-CONTENT-2 */
+
+  .header-bot .bot-nav .bot-nav-content-2 {
+    border-top-width: 3px;
+    border-style: solid;
+    border-top-color: transparent;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+
+  .header-bot .bot-nav .bot-nav-content-2:hover {
+    --tw-border-opacity: 1;
+    border-color: rgb(1 179 167 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(48 69 89 / var(--tw-bg-opacity));
+  }
+
+  .header-bot .bot-nav .bot-nav-content-2 a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  /* BOT-NAV-CONTENT-3 */
+
+  .header-bot .bot-nav .bot-nav-content-3 {
+    border-top-width: 3px;
+    border-style: solid;
+    border-top-color: transparent;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+
+  .header-bot .bot-nav .bot-nav-content-3:hover {
+    --tw-border-opacity: 1;
+    border-color: rgb(1 179 167 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(48 69 89 / var(--tw-bg-opacity));
+  }
+
+  .header-bot .bot-nav .bot-nav-content-3 a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  /* BOT-NAV-CONTENT-4 */
+
+  .header-bot .bot-nav .bot-nav-content-4 {
+    border-top-width: 3px;
+    border-style: solid;
+    border-top-color: transparent;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+
+  .header-bot .bot-nav .bot-nav-content-4:hover {
+    --tw-border-opacity: 1;
+    border-color: rgb(1 179 167 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(48 69 89 / var(--tw-bg-opacity));
+  }
+
+  .header-bot .bot-nav .bot-nav-content-4 a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  /* BOT-NAV-CONTENT-5 */
+
+  .header-bot .bot-nav .bot-nav-content-5 {
+    border-top-width: 3px;
+    border-style: solid;
+    border-top-color: transparent;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+
+  .header-bot .bot-nav .bot-nav-content-5:hover {
+    --tw-border-opacity: 1;
+    border-color: rgb(1 179 167 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(48 69 89 / var(--tw-bg-opacity));
+  }
+
+  .header-bot .bot-nav .bot-nav-content-5 a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  /* BOT-NAV-CONTENT-6 */
+
+  .header-bot .bot-nav .bot-nav-content-6 {
+    border-top-width: 3px;
+    border-style: solid;
+    border-top-color: transparent;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+
+  .header-bot .bot-nav .bot-nav-content-6:hover {
+    --tw-border-opacity: 1;
+    border-color: rgb(1 179 167 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(48 69 89 / var(--tw-bg-opacity));
+  }
+
+  .header-bot .bot-nav .bot-nav-content-6 a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  /* BOT-NAV-CONTENT-7 */
+
+  .header-bot .bot-nav .bot-nav-content-7 {
+    border-top-width: 3px;
+    border-style: solid;
+    border-top-color: transparent;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+  }
+
+  .header-bot .bot-nav .bot-nav-content-7:hover {
+    --tw-border-opacity: 1;
+    border-color: rgb(1 179 167 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(48 69 89 / var(--tw-bg-opacity));
+  }
+
+  .header-bot .bot-nav .bot-nav-content-7 a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  /* HEADER SOCIALS */
+
+  .header-socials ul li a {
+    font-size: 1.1rem;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+    transition-duration: 150ms;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .header-socials ul li a:hover {
+    --tw-text-opacity: 1;
+    color: rgb(1 179 167 / var(--tw-text-opacity));
+  }
+
+  /* NAV DROPDOWN */
+
+  .bot-drop-2 {
+    position: absolute;
+    top: 11.55rem;
+    left: 26.6rem;
+    width: 15rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(250 204 21 / var(--tw-bg-opacity));
+    padding: 1rem;
+  }
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80rem;
+  padding: 1.5rem;
+}
+
+/* REPEATABLE PATTERNS  */
+
+.btn {
+  display: inline-block;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.btn.transGreen {
+  border-width: 2px;
+  border-style: solid;
+  --tw-border-opacity: 1;
+  border-color: rgb(1 179 167 / var(--tw-border-opacity));
+}
+
+.btn.transGreen:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(80 186 135 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(80 186 135 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
