@@ -1,4 +1,25 @@
 @tailwind base;
+
+:root {
+	--primary: #01b3a7;
+    --light: #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 3px;
+}
+
+*::-webkit-scrollbar-track {
+	background: var(--light);
+	border-radius: 2px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--primary);
+	border-radius: 10px;
+}
+
 @tailwind components;
 @tailwind utilities;
 
@@ -6,143 +27,181 @@
 	@apply max-w-[80rem] mx-auto p-[1.5rem];
 }
 
+/* ------- SLIDER BUTTON ------- */
+.tns-nav{
+	@apply absolute z-[999] right-0 top-[50%];
+}
+
+.tns-nav button{
+	@apply flex bg-gray-400 w-[.7rem] h-[.7rem] m-[.5rem] hover:bg-light focus:bg-primary;
+}
+
+.tns-nav .tns-nav-active{
+	@apply bg-primary;
+}
+
+
+@media (min-width:1080px){
+	.tns-nav{
+		@apply right-[15rem];
+	}
+	
+	.tns-nav button{
+		@apply w-[.8rem] h-[.8rem] m-[.5rem];
+	}	
+}
+
+
+
 /* REPEATABLE PATTERNS  */
-.btn{
-    @apply inline-block py-[1rem] px-[2rem];
+
+@layer utilities{
+	.btn {
+		@apply inline-block py-[1rem] px-[2rem];
+	}
+
+	.btn.transGreen {
+		@apply border-solid border-[2px] border-primary;
+	}
+
+	.btn.transGreen:hover{
+		@apply bg-mint border-mint text-light;
+	}
+
+	.btn.transWhite{
+		@apply text-light border-solid border-[2px] border-light;
+	}
+
+	.btn.transWhite:hover {
+		@apply bg-mint border-mint;
+	}
 }
 
-.btn.transGreen{
-    @apply border-solid border-[2px] border-primary  hover:text-light hover:bg-mint hover:border-mint; 
-}
+@layer components {
+	/* ------------------- HEADER ------------------- */
 
+	.header {
+		@apply relative;
+	}
 
+	.desktop-view {
+		@apply hidden;
+	}
 
-@layer components{
+	/*  MOBILE VIEW - NAVIGATION */
+	.mobile-view {
+		@apply flex justify-between p-[1.5rem] bg-light shadow-md;
+	}
 
-    .header{
-        @apply relative;
-    }
+	.mobile-left {
+		@apply flex gap-[2rem];
+	}
 
-    .desktop-view{
-        @apply hidden;
-    }
+	/* MOBILE CONTACT */
+	.mobile-contact {
+		@apply flex flex-col gap-[1rem] items-center absolute bg-grey right-0 top-[-100rem] z-[3];
+	}
 
-     /*  MOBILE VIEW - NAVIGATION */
-    .mobile-view{
-        @apply flex justify-between p-[1.5rem] bg-light shadow-md;
-    }
+	.mobile-contact.open {
+		@apply top-[4.2rem] p-[1rem] w-[15rem];
+	}
 
-    .mobile-left{
-        @apply flex gap-[2rem];
-    }
+	.mobile-contact-text {
+		@apply flex flex-col gap-[.6rem];
+	}
 
+	.mobile-contact-text p {
+		@apply text-dark flex flex-row gap-[1rem];
+	}
 
-    /* MOBILE CONTACT */
-    .mobile-contact{
-        @apply flex flex-col gap-[1rem] items-center absolute bg-grey right-0 top-[-100rem];
-    }
+	.mobile-contact-text p i {
+		@apply text-primary text-[1.2rem];
+	}
 
-    .mobile-contact.open{
-        @apply top-[4.2rem] p-[1rem] w-[15rem]
-    }
+	/* NAVIGATION BAR */
+	.mobile-nav {
+		@apply absolute bg-light h-screen left-[-100rem] top-[4.1rem]  transition-[.8s] ease-in delay-[.2s] overflow-y-auto z-[3];
+	}
+	.mobile-nav.open {
+		@apply left-0 transition-all delay-[.3s];
+	}
 
-    .mobile-contact-text {
-        @apply flex flex-col gap-[.6rem];
-    }
+	/* MOBILE-NAV-SOCIALS */
+	.mobile-nav-socials {
+		@apply border-solid border-b border-gray-200;
+	}
 
-    .mobile-contact-text p{
-        @apply text-dark flex flex-row gap-[1rem];
-    }
+	.mobile-nav-socials ul {
+		@apply flex justify-center items-center gap-[1rem] pt-[1.5rem] pb-[2rem];
+	}
 
-    .mobile-contact-text p i{
-        @apply text-primary text-[1.2rem]
-    }
+	.mobile-nav-socials ul li a {
+		@apply text-[1.1rem] hover:text-primary transition ease-in-out duration-[.5s];
+	}
 
+	/* DROPDOWN MENU */
+	.mobile-nav-drop {
+		@apply bg-light w-[16rem] px-[.1rem];
+	}
 
-    /* NAVIGATION BAR */
-    .mobile-nav{
-        @apply absolute bg-light left-[-100rem] top-[4.3rem] transition-[.8s] ease-in delay-[.2s] min-h-[100vh];
-    }
-
-    .mobile-nav.open{
-        @apply left-0 transition-all delay-[.3s]; 
-    }
-
-
-    /* MOBILE-NAV-SOCIALS */
-    .mobile-nav-socials {
-        @apply border-solid border-b border-gray-200;
-    }
-
-    .mobile-nav-socials ul{
-        @apply flex justify-center items-center gap-[1rem] pt-[1.5rem] pb-[2rem];
-    }
-
-    .mobile-nav-socials ul li a{
-        @apply text-[1.1rem] hover:text-primary transition ease-in-out duration-[.5s];
-    }
-
-
-    /* DROPDOWN MENU */
-    .mobile-nav-drop{
-        @apply bg-light w-[16rem] px-[.1rem];
-    }
-
-    .drop-item h4{
+	.drop-item h4 {
 		@apply flex justify-between items-center text-gray-500 text-[1rem] py-[1rem] cursor-pointer px-[1rem] hover:bg-primary hover:text-light;
 	}
 
-    .drop-item:first-child h4{
+	.drop-item:first-child h4 {
 		@apply bg-primary text-light;
 	}
 
-	.drop-item h4 i{
-		@apply text-[.8rem] text-gray-500 hover:text-light;
+	.drop-item h4 i {
+		@apply text-[.8rem];
 	}
 
-	.drop-item h4 i.open{
+	.drop-item h4 i.open {
 		@apply rotate-[180deg] transition ease-in-out duration-[.5s];
 	}
 
-	.drpDown{
-		@apply  max-h-0 overflow-hidden transition ease-in-out duration-[.5s];
+	.drpDown {
+		@apply max-h-0 overflow-hidden transition ease-in-out duration-[.5s];
 	}
 
-	.drpDown.open{
+	.drpDown.open {
 		@apply max-h-[80rem] transition ease-in-out duration-[.5s];
 	}
 
-	.drop-content{
-		@apply  max-h-0 overflow-hidden transition ease-in-out duration-[.5s] ;
+	.drop-content {
+		@apply max-h-0 overflow-hidden transition ease-in-out duration-[.5s] overflow-y-scroll;
 	}
 
-	.drop-content.open{
-		@apply max-h-[50rem] transition ease-in-out duration-[.5s] overflow-y-scroll;
+	.drop-content .content-1 ul li {
+		@apply hover:text-light;
 	}
 
-    .drop-item ul li{
-		@apply py-[1rem] px-[2rem] cursor-pointer hover:bg-primary  
+	.drop-content.open {
+		@apply max-h-[50rem] transition ease-in-out duration-[.5s];
 	}
 
-    .drop-item ul li a{
-		@apply text-[.9rem] text-gray-500 hover:text-light;
+	.drop-item ul li {
+		@apply py-[1rem] px-[2rem] cursor-pointer text-gray-500 hover:bg-primary hover:text-light;
 	}
 
-    .content-1 h3{
-        @apply text-mint mx-[1.2rem] py-[.5rem] text-[1.3rem] border-solid border-b border-gray-300
-    }
+	.drop-item ul li a {
+		@apply text-[.9rem];
+	}
 
+	.content-1 h3 {
+		@apply text-mint mx-[1.2rem] py-[.5rem] text-[1.3rem] border-solid border-b border-gray-300;
+	}
 
-     /* TOGGLE MENU */
-    .toggle__menu{
-        @apply cursor-pointer;
-    }
+	/* TOGGLE MENU */
+	.toggle__menu {
+		@apply cursor-pointer;
+	}
 
 	.toggle__menu span {
 		@apply w-[1.5rem] h-[.2rem] bg-dark block transition ease-in-out duration-[.5s];
 	}
 
-	.toggle__menu span:nth-child(2){
+	.toggle__menu span:nth-child(2) {
 		@apply my-[.3rem];
 	}
 
@@ -157,18 +216,17 @@
 		@apply translate-x-0 translate-y-[-14px] rotate-[-230deg] transition ease-in-out duration-[.5s] w-[.8rem];
 	}
 
+	/* CIRCLE TOGGLE MENU */
 
-    /* CIRCLE TOGGLE MENU */
+	.circle-toggle__menu {
+		@apply h-[1rem] cursor-pointer;
+	}
 
-    .circle-toggle__menu{
-        @apply h-[1rem] cursor-pointer;
-    }
-
-    .circle-toggle__menu span {
+	.circle-toggle__menu span {
 		@apply w-[.4rem] h-[.4rem] bg-dark block transition ease-in-out duration-[.5s] rounded-full;
 	}
 
-	.circle-toggle__menu span:nth-child(2){
+	.circle-toggle__menu span:nth-child(2) {
 		@apply my-[.2rem];
 	}
 
@@ -183,197 +241,272 @@
 		@apply translate-x-0 translate-y-[-1rem] rotate-[-225deg] transition ease-in-out duration-[.5s] w-[.3rem] h-[.3rem];
 	}
 
+	@media (min-width: 1080px) {
+		.header .container {
+			@apply py-0;
+		}
+
+		.mobile-view {
+			@apply hidden;
+		}
+
+		.desktop-view {
+			@apply block;
+		}
+
+		/* HEADER TOP */
+		.header-top {
+			@apply flex justify-between items-center bg-light max-w-[80rem] mx-auto p-[1.5rem];
+		}
+
+		.contact {
+			@apply flex items-center gap-[2rem];
+		}
+
+		.contact-text {
+			@apply flex items-center gap-[1rem];
+		}
+
+		.contact-text p {
+			@apply text-dark flex items-center gap-[1rem] text-[.95rem] px-[1rem];
+		}
+
+		.contact-text p:first-child {
+			@apply pr-[1.5rem] border-solid border-r border-gray-400;
+		}
+
+		.contact-text p i {
+			@apply text-primary text-[1.2rem];
+		}
+
+		/* HEADER BOT */
+		.bot-wrapper {
+			@apply bg-asul;
+		}
+
+		.header-bot {
+			@apply flex justify-between items-center max-w-[80rem] mx-auto;
+		}
+
+		.header-bot ul {
+			@apply flex gap-[1rem];
+		}
+
+		/* HEADER SOCIALS */
+		.header-socials ul li a {
+			@apply text-[1.1rem] text-light hover:text-primary transition ease-in-out duration-[.5s];
+		}
+
+		/* BOT-NAV-CONTENT-1 */
+		.header-bot .bot-nav .bot-nav-content-1 {
+			@apply bg-hoverBlue border-solid border-t-[3px] border-primary py-[1.5rem] px-[1.3rem];
+		}
+
+		.header-bot .bot-nav .bot-nav-content-1 a {
+			@apply text-light font-medium text-[1.1rem];
+		}
+
+		/* BOT-NAV-CONTENT-2 */
+		.header-bot .bot-nav .bot-nav-content-2 {
+			@apply relative py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
+		}
+
+		.header-bot .bot-nav .bot-nav-content-2 .drop-text {
+			@apply text-light font-medium text-[1.1rem];
+		}
+
+		/* BOT-NAV-CONTENT-2 HOVER STATE*/
+
+		.header-bot .bot-nav .bot-nav-content-2:hover .bot-drop-2 {
+			@apply overflow-visible transform translate-y-[1.5rem] w-[15rem] p-[1.5rem] opacity-100 transition-[.5s] ease-in;
+		}
+
+		.bot-drop-2 {
+			@apply absolute bg-light left-0 transform -translate-y-[-8rem] w-[15rem] p-[1rem] opacity-0 transition-[.5s] ease-in z-[3];
+		}
+
+        .bot-drop-2 ul li:hover {
+			@apply border-solid border-l-[2px] border-primary pl-[1rem] transition-[.5s] ease-in;
+		}
+
+		/* BOT-NAV-CONTENT-3 */
+		.header-bot .bot-nav .bot-nav-content-3 {
+			@apply relative py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
+		}
+
+		.header-bot .bot-nav .bot-nav-content-3 .drop-text {
+			@apply text-light font-medium text-[1.1rem];
+		}
+
+        .bot-drop-3 ul li:hover {
+			@apply border-solid border-l-[2px] border-primary pl-[1rem] transition-[.5s] ease-in;
+		}
+
+		/* BOT-NAV-CONTENT-3 HOVER STATE*/
+
+		.header-bot .bot-nav .bot-nav-content-3:hover .bot-drop-3 {
+			@apply overflow-visible transform translate-y-[1.5rem] w-[15rem] p-[1.5rem] opacity-100 transition-[.5s] ease-in;
+		}
+
+		.bot-drop-3 {
+			@apply absolute bg-light  left-0 transform -translate-y-[-8rem] w-[15rem] p-[1rem] opacity-0 transition-[.5s] ease-in z-[3];
+		}
+
+		/* BOT-NAV-CONTENT-4 */
+		.header-bot .bot-nav .bot-nav-content-4 {
+			@apply relative py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
+		}
+
+		.header-bot .bot-nav .bot-nav-content-4 .drop-text {
+			@apply text-light font-medium text-[1.1rem];
+		}
+
+		/* BOT-NAV-CONTENT-4 HOVER STATE*/
+
+		.header-bot .bot-nav .bot-nav-content-4:hover .bot-drop-4 {
+			@apply overflow-visible transform translate-y-[1.5rem] w-[15rem] p-[1.5rem] opacity-100 transition-[.5s] ease-in;
+		}
+
+		.bot-drop-4 {
+			@apply absolute bg-light left-0 transform -translate-y-[-8rem] w-[15rem] p-[1rem] transition-[.5s] ease-in opacity-0 z-[3];
+		}
+
+		.bot-drop-4 ul {
+			@apply flex flex-col;
+		}
+
+		.bot-drop-4 ul li:hover {
+			@apply border-solid border-l-[2px] border-primary pl-[1rem] transition-[.5s] ease-in;
+		}
+
+		/* BOT-NAV-CONTENT-5 */
+		.header-bot .bot-nav .bot-nav-content-5 {
+			@apply relative py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
+		}
+
+		.header-bot .bot-nav .bot-nav-content-5 .drop-text {
+			@apply text-light font-medium text-[1.1rem];
+		}
+
+		/* BOT-NAV-CONTENT-5 HOVER STATE*/
+
+		.header-bot .bot-nav .bot-nav-content-5:hover .bot-drop-5 {
+			@apply overflow-visible transform translate-y-[1.5rem] w-[15rem] p-[1.5rem] opacity-100 transition-[.5s] ease-in;
+		}
+
+		.bot-drop-5 {
+			@apply absolute bg-light left-0 transform -translate-y-[-8rem] w-[15rem] p-[1rem] opacity-0 transition-[.5s] ease-in z-[3];
+		}
+
+		.bot-drop-5 ul {
+			@apply flex flex-col;
+		}
+
+		.bot-drop-5 ul li:hover {
+			@apply border-solid border-l-[2px] border-primary pl-[1rem] transition-[.5s] ease-in;
+		}
+
+		/* BOT-NAV-CONTENT-6 */
+		.header-bot .bot-nav .bot-nav-content-6 {
+			@apply py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
+		}
+
+		.header-bot .bot-nav .bot-nav-content-6 .drop-text {
+			@apply text-light font-medium text-[1.1rem];
+		}
+
+		/* BOT-NAV-CONTENT-7 */
+		.header-bot .bot-nav .bot-nav-content-7 {
+			@apply py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
+		}
+
+		.header-bot .bot-nav .bot-nav-content-7 .drop-text {
+			@apply text-light font-medium text-[1.1rem];
+		}
+
+		/* BOT-NAV-CONTENT-7 HOVER STATE*/
+
+		.header-bot .bot-nav .bot-nav-content-7:hover .bot-drop-7 {
+			@apply overflow-visible transform translate-y-[1.5rem] w-[60rem] p-[2.5rem] opacity-100 transition-[.5s] ease-in;
+		}
+
+		.bot-drop-7 {
+			@apply absolute flex gap-[2rem] bg-light left-[20rem] transform -translate-y-[-8rem] w-[60rem] p-[2.5rem] transition-[.5s] ease-in opacity-0 z-[3];
+		}
+
+		.drop-item-7 {
+			@apply w-[40rem];
+		}
+
+		.drop-item-7:first-child {
+			@apply border-solid border-r border-gray-300 pr-[1rem];
+		}
+
+		.drop-item-7 h3 {
+			@apply text-dark font-light text-[1.5rem] mb-[1rem];
+		}
+
+		.drop-item-7 ul {
+			@apply grid grid-cols-2;
+		}
+
+		.drop-item-7 ul li:hover {
+			@apply border-solid border-l-[2px] border-primary pl-[1rem] transition-[.5s] ease-in;
+		}
+
+		
+	}
 
 
-    @media (min-width:1080px){
 
-        .header .container{
-            @apply py-0;
-        }
+    /* ------------------- SLIDER BANNER 1 ------------------- */
 
-        .mobile-view{
-            @apply hidden;
-        }
+	.slider__banner{
+		@apply relative;
+	}
 
-        .desktop-view{
-            @apply block ;
-        }
+	/* .slider__banner__wrapper{
+		@apply h-[100rem];
+	} */
 
-        /* HEADER TOP */
-        .header-top{
-            @apply flex justify-between items-center bg-light max-w-[80rem] mx-auto p-[1.5rem];
-        }
-
-        .contact{
-            @apply flex items-center gap-[2rem];
-        }
-
-        .contact-text{
-            @apply flex items-center gap-[1rem]
-        }
-
-        .contact-text p{
-            @apply text-dark flex items-center gap-[1rem] text-[.95rem];
-        }
-    
-        .contact-text p:first-child{
-            @apply pr-[1rem] border-solid border-r border-gray-400
-        }
-    
-        .contact-text p i{
-            @apply text-primary text-[1.2rem]
-        }
-
-
-        /* HEADER BOT */
-        .bot-wrapper{
-            @apply bg-asul;
-        }
-
-        .header-bot{
-            @apply flex justify-between items-center max-w-[80rem] mx-auto ;
-        }
-
-        .header-bot ul{
-            @apply  flex items-center gap-[1rem];
-        }
-
-
-        /* BOT-NAV-CONTENT-1 */
-        .header-bot .bot-nav .bot-nav-content-1{
-            @apply bg-hoverBlue border-solid border-t-[3px] border-primary py-[1.5rem] px-[1.3rem];
-        }
-
-        .header-bot .bot-nav .bot-nav-content-1 a{
-            @apply text-light font-medium text-[1.1rem];
-        }
-
-         /* BOT-NAV-CONTENT-2 */
-        .header-bot .bot-nav .bot-nav-content-2{
-            @apply py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
-        }
-
-        .header-bot .bot-nav .bot-nav-content-2 a{
-            @apply text-light font-medium text-[1.1rem];
-        }
-
-         /* BOT-NAV-CONTENT-3 */
-        .header-bot .bot-nav .bot-nav-content-3{
-            @apply py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
-        }
-
-        .header-bot .bot-nav .bot-nav-content-3 a{
-            @apply text-light font-medium text-[1.1rem];
-        }
-         /* BOT-NAV-CONTENT-4 */
-        .header-bot .bot-nav .bot-nav-content-4{
-            @apply py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
-        }
-
-        .header-bot .bot-nav .bot-nav-content-4 a{
-            @apply text-light font-medium text-[1.1rem];
-        }
-
-         /* BOT-NAV-CONTENT-5 */
-        .header-bot .bot-nav .bot-nav-content-5{
-            @apply py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
-        }
-
-        .header-bot .bot-nav .bot-nav-content-5 a{
-            @apply text-light font-medium text-[1.1rem];
-        }
-
-         /* BOT-NAV-CONTENT-6 */
-        .header-bot .bot-nav .bot-nav-content-6{
-            @apply py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
-        }
-
-        .header-bot .bot-nav .bot-nav-content-6 a{
-            @apply text-light font-medium text-[1.1rem];
-        }
-
-         /* BOT-NAV-CONTENT-7 */
-        .header-bot .bot-nav .bot-nav-content-7{
-            @apply py-[1.5rem] px-[1.3rem] border-solid border-t-[3px] border-t-transparent hover:bg-hoverBlue hover:border-primary;
-        }
-
-        .header-bot .bot-nav .bot-nav-content-7 a{
-            @apply text-light font-medium text-[1.1rem];
-        }
-
-
-        /* HEADER SOCIALS */
-        .header-socials ul li a{
-            @apply text-[1.1rem] text-light hover:text-primary transition ease-in-out duration-[.5s];
-        }
-        
-
-        /* NAV DROPDOWN */
-        .bot-drop-2{
-            @apply absolute bg-yellow-400 top-[11.55rem] w-[15rem] p-[1rem] left-[26.6rem];
-        }
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    .slider-items-1{
+        @apply relative flex items-center justify-center bg-slide1 min-h-[100vh] bg-cover;
     }
+    
+    .slider-items-2{
+        @apply relative flex items-center justify-center bg-slide2 min-h-[100vh] bg-cover;
+    }
+    
+    .slider-items-3{
+        @apply relative flex items-center justify-center bg-slide3 min-h-[100vh] bg-cover;
+    }
+    
+
+	/* SLIDER TEXT */
+	.slider-text{
+		@apply w-full;
+	}
+
+	.slider-text h3{
+		@apply text-light text-[1.1rem] font-medium w-[25rem];
+	}
+	.slider-text h2{
+		@apply text-light text-[2.5rem] pb-[1.5rem];
+	}
+
+	.slider-text h2 span{ 
+		@apply font-bold;
+	}
+
+	.slider-btn a{
+		@apply inline-block py-[1rem] px-[2rem] text-light border-solid border-[2px] border-light;
+	}
+
+	.slider-btn a:hover{
+		@apply bg-mint border-mint;
+	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
 
 }
