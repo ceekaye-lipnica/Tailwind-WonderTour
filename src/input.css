@@ -426,11 +426,11 @@
 
 		/* BOT-NAV-CONTENT-7 HOVER STATE*/
 
-		.header-bot .bot-nav .bot-nav-content-7:hover .bot-drop-7 {
+		.header-bot .bot-nav .bot-nav-content-7:hover .bot-drop-7{
 			@apply overflow-visible transform translate-y-[1.5rem] w-[60rem] p-[2.5rem] opacity-100 transition-[.5s] ease-in;
 		}
 
-		.bot-drop-7 {
+		.bot-drop-7{
 			@apply absolute flex gap-[2rem] bg-light left-[20rem] transform -translate-y-[-8rem] w-[60rem] p-[2.5rem] transition-[.5s] ease-in opacity-0 z-[3];
 		}
 
@@ -460,13 +460,9 @@
 
 
     /* ------------------- SLIDER BANNER 1 ------------------- */
-
+/* 
 	.slider__banner{
 		@apply relative;
-	}
-
-	/* .slider__banner__wrapper{
-		@apply h-[100rem];
 	} */
 
     .slider-items-1{
@@ -504,6 +500,21 @@
 
 	.slider-btn a:hover{
 		@apply bg-mint border-mint;
+	}
+
+	@media (min-width:1080px){
+		.slider-items-1{
+			@apply  min-h-[70vh];
+		}
+		
+		.slider-items-2{
+			@apply min-h-[70vh];
+		}
+		
+		.slider-items-3{
+			@apply min-h-[70vh];
+		}
+		
 	}
 
 

@@ -1518,12 +1518,9 @@ video {
 
 /* ------------------- SLIDER BANNER 1 ------------------- */
 
-.slider__banner {
-  position: relative;
-}
-
-/* .slider__banner__wrapper{
-		@apply h-[100rem];
+/* 
+	.slider__banner{
+		@apply relative;
 	} */
 
 .slider-items-1 {
@@ -1600,6 +1597,20 @@ video {
   border-color: rgb(80 186 135 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(80 186 135 / var(--tw-bg-opacity));
+}
+
+@media (min-width:1080px){
+  .slider-items-1 {
+    min-height: 70vh;
+  }
+
+  .slider-items-2 {
+    min-height: 70vh;
+  }
+
+  .slider-items-3 {
+    min-height: 70vh;
+  }
 }
 
 .btn {
