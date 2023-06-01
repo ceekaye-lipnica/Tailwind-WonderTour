@@ -1,3 +1,4 @@
+/* TOGGLE */
 const toggleMenu = document.querySelector(".toggle__menu");
 const mobileNav = document.querySelector(".mobile-nav");
 const circle = document.querySelector(".circle-toggle__menu");
@@ -13,7 +14,7 @@ toggleMenu.addEventListener("click", () => {
 });
 
 
-
+/* CIRCLE TOGGLE */
 circle.addEventListener("click", () => {
     circle.classList.toggle("open");
     circleNav.classList.toggle("open");
@@ -22,7 +23,7 @@ circle.addEventListener("click", () => {
 	mobileNav.classList.remove("open");
 });
 
-
+/* LINKS */
 const links = document.querySelectorAll(".drop-item h4");
 links.forEach((baba) => {
 	baba.addEventListener("click", () => {
@@ -30,3 +31,30 @@ links.forEach((baba) => {
 		baba.querySelector("i").classList.toggle("open");
 	});
 });
+
+
+/* HORIZON TAB */
+const horizonNav = document.querySelectorAll(".horizon-tab__link");
+const horizonContent = document.querySelectorAll(".horizon-tab-content");
+
+horizonNav.forEach((horizon) => {
+	horizon.addEventListener("click", () => {
+		removeActiveStar();
+		horizon.classList.add("active");
+		const activeContent = document.querySelector(`#${horizon.id}-content`);
+		removeActiveContent();
+		activeContent.classList.add("active");
+	});
+});
+
+function removeActiveStar() {
+	horizonNav.forEach((horizon) => {
+		horizon.classList.remove("active");
+	});
+}
+
+function removeActiveContent() {
+	horizonContent.forEach((horizon) => {
+		horizon.classList.remove("active");
+	});
+}
