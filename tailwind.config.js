@@ -22,11 +22,19 @@ module.exports = {
         'slide1': 'url("./img/slider1.jpg")',
         'slide2': 'url("./img/slider2.jpg")',
         'slide3': 'url("./img/slider3.jpg")',
+
+        'parallax': 'url("./img/parallax.jpg")',
+        'parallax2': 'url("./img/parallax2.jpg")',
+        'dreamBg': 'url("./img/dream.jpg")',
       },
 
       transitionTimingFunction: {
         'move-out': 'cubic-bezier(0.4, 1.55, 0.74, 0.55)',
-      }
+      },
+
+      placeholderColor: {
+        'light': '#ffffff',
+      },
     },
   },
   plugins: [],
