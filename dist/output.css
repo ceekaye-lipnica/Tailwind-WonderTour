@@ -3045,6 +3045,12 @@ video {
   color: rgb(1 179 167 / var(--tw-text-opacity));
 }
 
+.links-btn {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
 .btn {
   display: inline-block;
   padding-top: 1rem;
@@ -3107,6 +3113,26 @@ video {
   background-color: transparent;
   --tw-text-opacity: 1;
   color: rgb(21 21 21 / var(--tw-text-opacity));
+  transition-property: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.btn.mint {
+  --tw-bg-opacity: 1;
+  background-color: rgb(1 179 167 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition-property: .5s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.btn.mint:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(80 186 135 / var(--tw-bg-opacity));
   transition-property: .5s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
