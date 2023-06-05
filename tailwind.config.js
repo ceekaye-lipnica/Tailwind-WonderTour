@@ -18,6 +18,11 @@ module.exports = {
         'md': '0 0 10px 0 rgba(0, 0, 0, 0.1);',
       },
 
+      backgroundColor: {
+        'blur': 'rgba(255, 255, 255, 0.2)',
+        'blurB': 'rgba(0, 0, 0, 0.5)',
+      },
+
       backgroundImage: {
         'slide1': 'url("./img/slider1.jpg")',
         'slide2': 'url("./img/slider2.jpg")',
@@ -32,9 +37,6 @@ module.exports = {
         'move-out': 'cubic-bezier(0.4, 1.55, 0.74, 0.55)',
       },
 
-      placeholderColor: {
-        'light': '#ffffff',
-      },
     },
   },
   plugins: [],
