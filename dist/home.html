@@ -347,6 +347,9 @@
 
     <section class="holiday-cards">
         <div class="container">
+
+            <button onclick="topFunction()" id="roll-up" title="Go to top"><i class="fa-solid fa-chevron-up"></i></button>
+
             <div class="holiday-cards__wrapper">
 
                 <div class="card-content">
@@ -830,7 +833,7 @@
                 </div>
                 <div class="discount-form">
                     <form action="">
-                        <input type="text" placeholder="Enter Your Email">
+                        <input type="text" placeholder="Enter Your Email" required>
                     </form>
                     <a href="" class="btn GreenBlack">Subscribe</a>
                 </div>
@@ -1046,6 +1049,24 @@
         </div>
     </section>
 
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                    <p>© 2023 Wonder Tour. All rights reserved.</p>
+                    <div class="footer-socials">
+                        <ul>
+                            <li><a href=""> <i class="fa-brands fa-facebook-f"></i> </a></li>
+                            <li><a href=""> <i class="fa-brands fa-twitter"></i> </a></li>
+                            <li><a href=""> <i class="fa-brands fa-google-plus-g"></i> </a></li>
+                            <li><a href=""> <i class="fa-brands fa-instagram"></i> </a></li>
+                        </ul>
+                    </div>
+                    
+                <a href="" class="policy">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
 
 
 
@@ -1075,7 +1096,7 @@
             container: '.blog__wrapper', 
             items: 1,
             slideBy: 'page',
-            autoplay: true,
+            autoplay: false,
             axis: 'horizontal',
             controls: false,
             nav: true,

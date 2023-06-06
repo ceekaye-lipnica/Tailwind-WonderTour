@@ -468,10 +468,6 @@
 	}
 
 	/* ------------------- SLIDER BANNER 1 ------------------- */
-	/* 
-	.slider__banner{
-		@apply relative;
-	} */
 
 	.slider-items-1 {
 		@apply relative flex items-center justify-center bg-slide1 min-h-[100vh] bg-cover;
@@ -524,6 +520,18 @@
 	}
 
 	/* ------------------- HOLIDAY CARDS ------------------- */
+	#roll-up{
+		@apply fixed bg-primary outline-none border-none py-[.7rem] px-[.8rem] right-[1rem] bottom-[1rem] z-[5] transition-[.5s] ease-in;
+	}
+
+	#roll-up:hover{
+		@apply bg-dark transition-[.5s] ease-in;
+	}
+
+	#roll-up i{
+		@apply text-light;
+	}
+	
 	.holiday-cards {
 		@apply bg-grey py-[3rem] min-h-[33rem];
 	}
@@ -556,6 +564,10 @@
 		@apply flex items-center justify-center gap-[.5rem] mt-[1.5rem];
 	}
 
+	.card-arrow:hover .arrow-content span {
+		@apply w-[1.5rem] transition-[.8s] ease-in
+	}
+
 	.arrow-content {
 		@apply relative flex items-center justify-center pt-[.2rem];
 	}
@@ -564,15 +576,16 @@
 		@apply bg-dark block w-[1rem] h-[.11rem] transition-[.8s] ease-in rounded-full;
 	}
 
-	.arrow-content:hover span {
-		@apply w-[1.5rem] transition-[.8s] ease-in;
-	}
-
 	.arrow-content i {
 		@apply text-[.8rem] pt-[.15rem] absolute right-0;
 	}
 
 	@media (min-width: 1080px) {
+
+		#roll-up{
+			@apply px-[1rem] bottom-[3rem] z-[5] transition-[.5s] ease-in;
+		}
+
 		.card-content {
 			@apply flex flex-row gap-[1.5rem] mt-[-7rem];
 		}
@@ -766,12 +779,12 @@
 		}
 
 		.services-item {
-			@apply w-[25rem] py-[1.5rem];
+			@apply w-[25rem] py-[1.5rem] shadow-transparent;
 		}
 
-		/* .services-item:hover{
-			@apply border-[1px] shadow-[0_3px_10px_rgb(0,0,0,0.2)] transition-[.5s];
-		} */
+		.services-item:hover{
+			@apply border-opacity-0 shadow-[0_3px_10px_rgb(0,0,0,0.2)] transition-[.5s];
+		}
 
 		.services-item-container {
 			@apply flex flex-row items-start;
@@ -800,8 +813,12 @@
 		@apply relative overflow-hidden;
 	}
 
+	.hottours-img a img{
+		@apply transition-[.03s] ease-in w-full;
+	}
+
 	.hottours-img a p {
-		@apply absolute text-light text-[1.5rem] font-medium bg-primary overflow-hidden top-0 right-0 px-[1rem] py-1  bg-transparent z-20;
+		@apply absolute text-light text-[1.5rem] font-medium bg-primary overflow-hidden top-0 right-0 px-[1rem] py-1 bg-transparent z-20;
 	}
 
 	.hottours-img a p:before {
@@ -866,7 +883,7 @@
 		}
 
 		.hottours-img img:hover {
-			@apply scale-[.95];
+			@apply scale-[1.09] transition-[.03s] ease-in ;
 		}
 
 		.hottours-img a p {
@@ -1135,7 +1152,7 @@
 	}
 
 	.discount-form form input{
-		@apply w-full p-[1rem] bg-blur outline-none;
+		@apply w-full p-[1rem] bg-blur outline-none text-light;
 	}
 
 	.discount-form form input::placeholder{
@@ -1168,6 +1185,9 @@
 
 	/* ------------------- BLOG SECTION------------------- */
 
+	.blog{
+		@apply relative;
+	}
 	.blog-title h2{
 		@apply text-dark text-[2rem] font-medium text-center mb-[1.5rem]
 	}
@@ -1339,7 +1359,7 @@
 	}
 
 	.news-item a{
-		@apply text-primary text-[.9rem] font-medium;
+		@apply text-primary text-[1rem] font-medium;
 	}
 
 	.news-item a:hover{
@@ -1351,7 +1371,7 @@
 	}
 
 	.links-item ul{
-		@apply flex items-center gap-[1rem];
+		@apply flex flex-wrap justify-center items-center gap-[1rem] w-[25rem] ;
 	}
 
 	.links-item ul li a{
@@ -1363,86 +1383,123 @@
 	}
 
 	.links-item ul li a i{
-		@apply text-primary text-[.6rem]
+		@apply text-primary text-[.5rem]
 	}
 
 	.links-btn{
 		@apply flex justify-center mt-[1.5rem];
 	}
 
+	@media (min-width:1080px){
+		
+	.links__wrapper{
+		@apply flex flex-row  items-start gap-[10rem];
+	}
+
+		.links-item h3{
+		@apply text-left;
+	}
+
+	.links-item ul{
+		@apply flex flex-col justify-start items-start h-[6.5rem] gap-[1rem] ;
+	}
+
+	.links-btn{
+		@apply block mt-[1.3rem];
+	}
+
+	}
 
 
+	/* ------------------- FOOTER------------------- */
+	.footer{
+		@apply bg-asulDark;
+	}
 
+	.footer__wrapper{
+		@apply flex flex-col justify-center items-center gap-[1rem];
+	}
 
+	.footer__wrapper p{
+		@apply text-gray-500 text-[.9rem] font-medium order-1;
+	}
 
+	.footer__wrapper ul{
+		@apply flex items-center gap-[1rem] ;
+	}
 
+	.footer__wrapper ul li a{
+		@apply text-gray-500;
+	}
 
+	.footer__wrapper ul li a:hover{
+		@apply text-primary;
+	}
 
+	.footer__wrapper .policy{
+		@apply text-gray-500 text-[.9rem] font-medium order-1;
+	}
 
+	.footer__wrapper .policy:hover{
+		@apply text-primary;
+	}
 
+	@media (min-width:1080px){
+		.footer__wrapper{
+			@apply flex flex-row justify-between items-center gap-0;
+		}
 
+		.footer__wrapper p{
+			@apply order-none;
+		}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		.footer__wrapper .policy{
+			@apply order-none;
+		}
+	}
 
 }
 
-
-/* 
-.tns-controls{
-    @apply absolute top-[50%] right-0 left-0 mx-[2rem] flex items-center justify-between max-w-[106rem] z-10;
-}
-.tns-controls button{
-    @apply flex items-center;
-}
-.tns-controls button:first-child{
-    @apply  text-gray-500 transition-all hover:-translate-x-1 hover:text-primary;
-}
-.tns-controls button:last-child{
-    @apply  text-gray-500 transition-all hover:translate-x-1 hover:text-primary;
-}
-.tns-controls button:first-child::after{
-    @apply block bg-gray-500 w-[2rem] h-[.11rem] content-[""] hover:translate-x-2 hover:bg-primary transition-all;
-}
-.tns-controls button:last-child::before{
-    @apply block bg-gray-500 w-[2rem] h-[.11rem] content-[""] hover:-translate-x-2 hover:bg-primary transition-all;
-}
-.tns-nav button{
-    @apply bg-gray-400 h-[1rem] w-[1rem] my-1 mx-1 transition-all;
-}
-.tns-nav .tns-nav-active{
-    @apply bg-primary transition-all;
-} */
 
 
 
 /* ------- SLIDER BUTTON ------- */
-.tns-nav {
+.slider__banner .tns-nav {
 	@apply absolute z-[99] right-0 top-[50%];
 }
 
-.tns-nav button {
+.slider__banner .tns-nav button {
 	@apply flex bg-gray-400 w-[.7rem] h-[.7rem] m-[.5rem] hover:bg-light focus:bg-primary;
 }
 
-.tns-nav .tns-nav-active {
+.slider__banner .tns-nav .tns-nav-active {
 	@apply bg-primary;
 }
 
+
+.blog .tns-nav {
+	@apply absolute flex items-center justify-center z-[99] bottom-[3rem] right-[35%];
+}
+
+.blog .tns-nav button {
+	@apply flex bg-gray-400 w-[.7rem] h-[.7rem] m-[.5rem] hover:bg-mint focus:bg-primary;
+}
+
+.blog .tns-nav .tns-nav-active {
+	@apply bg-primary;
+}
+
+
 .gallery .tns-nav{
-    @apply flex items-center justify-center bottom-[-8rem] right-[10rem];
+	@apply absolute flex items-center justify-center z-[99] bottom-[2rem] right-[30%];
+}
+
+.gallery .tns-nav button {
+	@apply flex bg-gray-400 w-[.7rem] h-[.7rem] m-[.5rem] hover:bg-light focus:bg-mint;
+}
+
+.gallery .tns-nav .tns-nav-active {
+	@apply bg-mint;
 }
 
 .gallery .tns-outer{
@@ -1460,6 +1517,10 @@
 
 	.tns-nav button {
 		@apply w-[.8rem] h-[.8rem] m-[.5rem];
+	}
+
+	.blog .tns-nav {
+		@apply right-[59rem];
 	}
 
 }
