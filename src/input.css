@@ -28,8 +28,8 @@
 	@apply max-w-[80rem] mx-auto p-[1.5rem];
 }
 
-/* REPEATABLE PATTERNS  */
 
+/* REPEATABLE PATTERNS  */
 @layer utilities {
 	.btn {
 		@apply inline-block py-[1rem] px-[2rem];
@@ -262,6 +262,7 @@
 			@apply hidden;
 		}
 
+		/*  DESKTOP VIEW - NAVIGATION */
 		.desktop-view {
 			@apply block;
 		}
@@ -469,15 +470,15 @@
 
 	/* ------------------- SLIDER BANNER 1 ------------------- */
 
-	.slider-items-1 {
+	.slider-items-1{
 		@apply relative flex items-center justify-center bg-slide1 min-h-[100vh] bg-cover;
 	}
 
-	.slider-items-2 {
+	.slider-items-2{
 		@apply relative flex items-center justify-center bg-slide2 min-h-[100vh] bg-cover;
 	}
 
-	.slider-items-3 {
+	.slider-items-3{
 		@apply relative flex items-center justify-center bg-slide3 min-h-[100vh] bg-cover;
 	}
 
@@ -487,10 +488,10 @@
 	}
 
 	.slider-text h3 {
-		@apply text-light text-[1.1rem] font-medium w-[25rem];
+		@apply text-light text-[1.1rem] font-medium w-[25rem] translate-x-0 opacity-0 transition-all duration-1000;
 	}
 	.slider-text h2 {
-		@apply text-light text-[2.5rem] pb-[1.5rem];
+		@apply text-light text-[2.5rem] pb-[1.5rem]  opacity-0 translate-y-[0] transition-all duration-1000;
 	}
 
 	.slider-text h2 span {
@@ -498,7 +499,7 @@
 	}
 
 	.slider-btn a {
-		@apply inline-block py-[1rem] px-[2rem] text-light border-solid border-[2px] border-light;
+		@apply inline-block py-[1rem] px-[2rem] text-light border-solid border-[2px] border-light -translate-x-10 opacity-0 transition-all duration-1000;
 	}
 
 	.slider-btn a:hover {
@@ -530,6 +531,10 @@
 
 	#roll-up i {
 		@apply text-light;
+	}
+
+	html {
+		scroll-behavior: smooth
 	}
 
 	.holiday-cards {
@@ -816,7 +821,7 @@
 	}
 
 	.hottours-img a p {
-		@apply absolute text-light text-[1.5rem] font-medium bg-primary overflow-hidden top-0 right-0 px-[1rem] py-1 bg-transparent z-20;
+		@apply absolute text-light text-[1.4rem] font-medium bg-primary overflow-hidden top-0 right-0 px-[1rem] py-1 bg-transparent z-20 pt-0;
 	}
 
 	.hottours-img a p:before {
@@ -1055,7 +1060,7 @@
 
 	/* ------------------- DREAM SECTION------------------- */
 
-	.dream {
+	.dream{
 		@apply py-[2rem];
 	}
 
@@ -1068,7 +1073,7 @@
 	}
 
 	.dream-item {
-		@apply w-[18rem];
+		@apply w-[17.5rem];
 	}
 
 	.dream-bgImg {
@@ -1268,45 +1273,15 @@
 		}
 
 		.blog-mobile-text ul {
-			@apply hidden transition-[.5s] ease-in delay-[.2s];
+			@apply hidden transition-[.55s] duration-1000;
 		}
 
 		.blog-mobile-text:hover ul {
-			@apply flex items-center transition-[.5s] ease-in delay-[.2s];
+			@apply flex items-center transition-[.5s] duration-1000;
 		}
 	}
 
 	/* ------------------- GALLERY SECTION------------------- */
-
-	/* .gallery{
-		@apply bg-grey relative flex flex-col pb-[5rem];
-	}
-	.gallery-title h3{
-		@apply text-center bg-light px-[2rem] py-[.5rem] mb-[2rem] w-fit mx-auto;
-	}
-
-	.gallery__wrapper{
-        @apply flex items-center justify-center mx-auto;
-    }
-
-	.gallery-img{
-	@apply relative flex flex-row justify-center items-center gap-[1rem] h-fit w-fit overflow-hidden mx-auto lg:m-0;
-	}
-
-	.gallery-imgBox img{
-		@apply w-[25rem] transition-all duration-500;
-	}
-	.gallery-imgBox img:hover{
-		@apply scale-105 transition-all duration-500;
-	}
-
-	.gallery-img i{
-		@apply absolute top-[50%] left-[48%] text-[2rem] text-light;
-	}
-
-	.gallery-imgBox{
-		@apply flex justify-center;
-	} */
 
 	.gallery {
 		@apply bg-grey relative flex flex-col pb-[5rem];
@@ -1488,7 +1463,7 @@
 
 /* ------- SLIDER BUTTON ------- */
 .slider__banner .tns-nav {
-	@apply absolute z-[99] right-0 top-[50%];
+	@apply absolute z-[99] right-[.5rem] top-[50%];
 }
 
 .slider__banner .tns-nav button {
@@ -1498,6 +1473,18 @@
 .slider__banner .tns-nav .tns-nav-active {
 	@apply bg-primary;
 }
+
+/* SLIDER BANNER TEXT TRANSITION  */
+.slider__banner .tns-slide-active .slider-text h3{
+    @apply translate-y-[-3rem] opacity-100 transition-all duration-1000;
+}
+.slider__banner .tns-slide-active .slider-text h2{
+    @apply translate-y-[-3rem] opacity-100 transition-all duration-1000;
+}
+.slider__banner .tns-slide-active .slider-text a{
+    @apply translate-x-0 translate-y-[-3rem] opacity-100 transition-all duration-1000;
+}
+
 
 .blog .tns-nav {
 	@apply absolute flex items-center justify-center z-[99] bottom-[3rem] right-[35%];
@@ -1532,11 +1519,11 @@
 }
 
 @media (min-width: 1080px) {
-	.tns-nav {
-		@apply right-[15rem];
+	.slider__banner .tns-nav {
+		@apply right-[10rem];
 	}
 
-	.tns-nav button {
+	.slider__banner .tns-nav button {
 		@apply w-[.8rem] h-[.8rem] m-[.5rem];
 	}
 
