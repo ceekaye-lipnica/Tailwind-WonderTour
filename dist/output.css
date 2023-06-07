@@ -2549,6 +2549,7 @@ html {
 .peoplesay-text h4 {
   margin-bottom: .3rem;
   margin-top: 1rem;
+  cursor: pointer;
   text-align: center;
   font-size: 1.5rem;
   --tw-text-opacity: 1;

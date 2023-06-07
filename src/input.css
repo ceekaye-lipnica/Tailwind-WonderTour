@@ -1037,7 +1037,7 @@
 	}
 
 	.peoplesay-text h4 {
-		@apply text-primary text-[1.5rem] my-[.3rem] text-center mt-[1rem];
+		@apply text-primary text-[1.5rem] my-[.3rem] text-center mt-[1rem] cursor-pointer;
 	}
 
 	@media (min-width: 1080px) {
