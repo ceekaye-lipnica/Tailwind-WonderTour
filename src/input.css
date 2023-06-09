@@ -224,6 +224,7 @@
 	.toggle__menu.open span:nth-child(2) {
 		@apply transition ease-in-out duration-[.5s];
 	}
+ 
 	.toggle__menu.open span:last-child {
 		@apply translate-x-0 translate-y-[-14px] rotate-[-230deg] transition ease-in-out duration-[.5s] w-[.8rem];
 	}
